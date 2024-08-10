@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
-function Card({ data, defaultImage, flipCountHandler }) {
+function Card({ data, defaultImage, flipCountHandler, flipCount }) {
   const ref = useRef(null);
 
   const [isHovered, setIsHovered] = useState(false);
@@ -84,7 +84,7 @@ function Card({ data, defaultImage, flipCountHandler }) {
       ref={ref}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      onClick={data.destroy ? null : flipTheCard}
+      onClick={data.destroy ? null : flipCount <= 1 ? flipTheCard : null}
     >
       <img
         src={flipped ? data.image : defaultImage}

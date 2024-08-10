@@ -19,3 +19,7 @@
 main{
   perspective: 1000px;
 }
+
+.greeting-text{
+  font-family: 'Bangers', system-ui;
+}
